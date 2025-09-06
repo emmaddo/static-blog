@@ -10,15 +10,14 @@ const Home = ()=> {
 
       </header>
 
-      <main>
-<h2 className="p-2 items-center text-2xl">List of Articles</h2>
-{
-  data.map((article) => 
-  <div key={article.id}>
-    {article.title}
-  </div>)
-}
-      </main>
+     <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <h2 className="col-span-full text-2xl font-bold mb-4 text-center">Latest Articles</h2>
+  {data.map((article) => (
+    <div key={article.id} className="p-4 bg-white rounded-lg shadow-md">
+      <h3 className="text-base font-semibold text-gray-800">{article.title}</h3>
+    </div>
+  ))}
+</main>
 
       <footer>
 
