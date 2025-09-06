@@ -1,6 +1,7 @@
 import React from "react";
 import type {IApi} from "./types/IApi";
 import {api} from "./api/api";
+import Image from "next/image";
 
 const Home = ()=> {
   const data: IApi<string>[] = api;
@@ -14,6 +15,11 @@ const Home = ()=> {
   <h2 className="col-span-full text-2xl font-bold mb-4 text-center">Latest Articles</h2>
   {data.map((article) => (
     <div key={article.id} className="p-4 bg-white rounded-lg shadow-md">
+      <img 
+      className="w-full h-40 object-cover"
+      src="/staticBlog.svg"
+      alt="Blog Image"
+      />
       <h3 className="text-base font-semibold text-gray-800">{article.title}</h3>
     </div>
   ))}
